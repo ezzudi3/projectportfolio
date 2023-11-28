@@ -1,94 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
-  <title>Weather APP</title>
-  <link rel="icon" type="image/x-icon" sizes="36x36" href="download.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Portfolio - EZZUDIN</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!---box icons link--->
+	<link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!---remix icons link--->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!---Google fonts link--->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  navbar-dark bg-warning">
-        <a class="navbar-brand" href="#">Weather App</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" id="home">Home</a>
-            </li>
-          </ul>
-          
-          <form id="navSearch" class="form-inline my-2 my-lg-0" action="javascript:void(0);">
-            <input class="form-control mr-sm-2" type="text" id="searchBar"  placeholder="Search Location">
-            <input class="btn btn-outline-success my-2 my-sm-0" id="search2" type="submit" value="Search!">
-          </form>
-        </div>
-      </nav>
-    <main id="main" class="position-relative p-5">
-        <div class="text-center bg-dark p-3 w-75 mx-auto d-flex flex-column">
-            <h1 class="text-white-50">Search by Location</h1>
-            <h5 class="text-white-50">Write the location to get the weather</h5>
-            <form id="searching" action="javascript:void(0);">
-              <input class="form-class w-50" type="search" id="search" placeholder="Input your search keyword" name="search">
-              <br><br>
-              <input type="submit" class="btn btn-warning" id="submit" value="Weather" name="weather">
-              <input type="button" class="btn btn-warning" id="submit2" value="Forecast!" name="forecast">
-            </form>
-        </div>
-    </main>
-    <section id="section" class="bg-dark p-4">
-      <div class="card bg-dark text-white w-50 m-auto">
-        <div id="image"></div>
-        <div class="card-img-overlay">
-          <h5 class="card-title text-center text-warning" id="title"></h5>
-          <div class="d-flex flex-row justify-content-around">
-            <ul class="list-group list-unstyled">
-              <li class="list-group-item" id="temp"></li>
-              <li class="list-group-item" id="feel"></li>
-              <li class="list-group-item" id="desc"></li>
-              <li class="list-group-item" id="pressure"></li>
-              <li class="list-group-item" id="humidity"></li>
-              <li class="list-group-item" id="sunrise"></li>
-            </ul>
-            <ul class="list-group list-unstyled">
-              <li class="list-group-item" id="minTemp"></li>
-              <li class="list-group-item" id="maxTemp"></li>
-              <li class="list-group-item" id="wind"></li>
-              <li class="list-group-item" id="windDir"></li>
-              <li class="list-group-item" id="clouds"></li>
-              <li class="list-group-item" id="sunset"></li>
-            </ul>
-          </div>
-          <br>
-          <div class="text-center">
-            <div class="d-inline"><input type="submit" id="farCel" class="btn btn-warning" value="Celsius/Farenheit"></div>
-        </div>
-        </div>
-      </div>
-    </section>
-    <section id="section2" class="bg-dark pt-3">
-      <h3 id="cityName" class="text-center text-warning"></h3>
-      <div class="row d-flex justify-content-around w-100" id="row"></div>
-    </section>
-    <footer class="footer bg-dark p-2">
-        <div class="container">
-          <div class="developer">
-                <hr class="solid">
-                <h6>Designed And Developed By :</h6>
-                <div class="develop">
-                    <p><strong><a href="https://github.com/SamirPaul1/Weather-App-JS"
-                                alt="visit profile"> ezzudin eman</a></strong></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-  <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <script src="main.js"></script>
+
+	<!---header-->
+	<header>
+		<a href="#" class="logo">Developer <span>UniSZA</span></a>
+
+		<div class="bx bx-menu" id="menu-icon"></div>
+
+		<ul class="navlist">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#portfolio">Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+
+		<div class="top-btnn">
+			<a href="#contact" class="h-btn">Contact me</a>
+		</div>
+	</header>
+
+	<!---hero-->
+	<section class="hero" id="home">
+		<div class="main-content" data-aos="fade-in">
+			<h4>Hi, There!</h4>
+			<h1>I'm <span>Ezzudin Eman</span></h1>
+			<p>I'm a web Designer with extensive experience for over 3 years.
+			<br>expertise is to create and website design,Frontend design and many more.
+			</p>
+			<div class="social">
+
+				<a href="https://www.facebook.com/ezzudin.rusyaidi/" target ="_blank" class="social-link"><i class="ri-facebook-fill"></i></a>
+				<a href="https://www.instagram.com/muhd_.ez/?next=%2F"target ="_blank" class="social-link"><i class="ri-instagram-fill"></i></a>
+				<a href="https://twitter.com/?lang=id"target ="_blank" class="social-link"><i class="ri-twitter-fill"></i></a>
+				<a href="https://www.youtube.com/"target ="_blank" class="social-link"><i class="ri-youtube-fill"></i></a>
+			</div>
+
+			<div class="main-btn">
+				<a href="#" class="btn">Hire me</a>
+				<a href="#" class="btn btn2">Download CV</a>
+			</div>
+		</div>
+	</section>
+	<!---about-->
+	<section class="about" id="about">
+		<div class="about-img" data-aos="zoom-in-down">
+			<img src="img/about2.jpg">
+		</div>
+
+		<div class="about-text" data-aos="zoom-in-up">
+			<h2>I am Web <span>Designer</span> <br> & Web Developer</h2>
+			<div class="exp-area">
+				<p class="exp">
+					Experience: 
+					<span>3 Years</span>
+				</p>
+ 
+				<p class="exp">
+					Specialty: 
+					<span>Web Designer, Developer</span>
+				</p>
+
+				<p class="exp">
+					Address: 
+					<span>Johor,Malaysia</span>
+				</p>
+
+				<p class="exp">
+					Email: 
+					<span>Ezzudineman03@gmail.com</span>
+				</p>
+
+				<p class="exp">
+					Phone: 
+					<span>01157202300</span>
+				</p>
+
+				<p class="exp">
+					Freelance: 
+					<span>Available</span>
+				</p>
+
+			</div>
+			<a href="#portfolio" class="btn">View All Projects</a>
+		</div>
+	</section>
+
+	<!---services-->
+	<section class="services" id="services">
+		<div class="center-text" data-aos="fade-down">
+			<h2>My <span>Services</span></h2>
+		</div>
+
+		<div class="services-content" data-aos="zoom-in-up">
+			<div class="box">
+				<img src="img/s-1.svg">
+				<h3>UI/UX Design</h3>
+				<p>Fringilla dapibus platean interdum justoutan elentum lectus tellus midign issimer motana egestas imperdiet solution.</p>
+				<a href="#">
+					Download now
+					<i class="ri-arrow-right-line"></i>
+				</a>
+			</div>
+
+			<div class="box">
+				<img src="img/s-2.svg">
+				<h3>UI/UX Design</h3>
+				<p>Fringilla dapibus platean interdum justoutan elentum lectus tellus midign issimer motana egestas imperdiet solution.</p>
+				<a href="#">
+					Download now
+					<i class="ri-arrow-right-line"></i>
+				</a>
+			</div>
+
+			<div class="box">
+				<img src="img/s-3.svg">
+				<h3>UI/UX Design</h3>
+				<p>Fringilla dapibus platean interdum justoutan elentum lectus tellus midign issimer motana egestas imperdiet solution.</p>
+				<a href="#">
+					Download now
+					<i class="ri-arrow-right-line"></i>
+				</a>
+			</div>
+
+		</div>
+	</section>
+
+	<!---portfolio-->
+	<section class="portfolio" id="portfolio">
+		<div class="center-text" data-aos="fade-down">
+			<h2>My <span>Projects
+
+			</span></h2>
+		</div>
+
+		<div class="Portfolio-content" data-aos="zoom-in-up">
+			<div class="row">
+				<img src="img/temperature.png">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>TEMPERATURE CONVERTER</h5>
+					</div>
+					<div class="row-icon">
+						<a href="https://temperatureconverter.netlify.app/">
+						<i class="ri-github-fill"></i>
+						</a>
+					</div>
+				</div>
+				<h4>It will involve validation of the user input, using the dropdown menu to know if the input is celsius or Fahrenheit. You can add more functionality to it.
+					<br>Skills Required – Input Validation, Form designing, HTML, CSS, JavaScript
+				</h4>
+			</div>
+
+			<div class="row">
+				<img src="img/port-2.jpg">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>Website Design</h5>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+				<h4>Website Development For Dark X</h4>
+			</div>
+
+			<div class="row">
+				<img src="img/port-3.jpg">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>Website Design</h5>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+				<h4>Website Development For Dark X</h4>
+			</div>
+
+			<div class="row">
+				<img src="img/port-4.jpg">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>Website Design</h5>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+				<h4>Website Development For Dark X</h4>
+			</div>
+
+			<div class="row">
+				<img src="img/port-5.jpg">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>Website Design</h5>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+				<h4>Website Development For Dark X</h4>
+			</div>
+
+			<div class="row">
+				<img src="img/port-6.jpg">
+				<div class="main-row">
+					<div class="row-text">
+						<h5>Website Design</h5>
+					</div>
+					<div class="row-icon">
+						<i class="ri-github-fill"></i>
+					</div>
+				</div>
+				<h4>Website Development For Dark X</h4>
+			</div>
+
+		</div>
+	</section>
+
+	<!---contact-->
+	<section class="contact" id="contact">
+		<div class="center-text" data-aos="fade-down">
+			<h2>Contact <span>Me</span></h2>
+		</div>
+
+		<div class="contact-form" data-aos="zoom-in">
+			<form action="">
+				<input type="text" placeholder="Your name" required>
+				<input type="email" placeholder="Email Address.." required>
+				<textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here..." required></textarea>
+				<input type="submit" name="" value="Send Message" class="send-btn">
+			</form>
+		</div>
+	</section>
+
+	<div class="footer">
+		<div class="copyright">
+			<p>2023 Ezzudin Eman, All Rights Reserved.</p>
+		</div>
+
+		<a href="#home" class="scroll-top">
+			<i class="ri-arrow-up-s-fill"></i>
+		</a>
+	</div>
+
+	<!---js link-->
+	<script src="js/script.js"></script>
+
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+    	offset: 300,
+    	duration: 1400,
+    });
+    </script>
+
 </body>
 </html>
